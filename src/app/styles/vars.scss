@@ -1,11 +1,6 @@
-:root {
-  --color-primary: #171719;
-
-  //fonts
-  --color-fontPrimary: #ffffff;
-  --color-fontOrange: #e75626;
-
-  //ui-components colors
-  --opacity: 0.5;
-  --color-buttonHovered: #be3b10;
-}
+// primary colors
+$color-primary: #171719;
+$color-fontPrimary: #ffffff;
+$color-orange: #e75626;
+$opacity50per: 0.5;
+$color-buttonHovered: #be3b10;
