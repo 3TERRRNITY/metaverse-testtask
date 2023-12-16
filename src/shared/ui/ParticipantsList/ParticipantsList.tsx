@@ -25,19 +25,19 @@ const ParticipantsTable = (props: IParticipantsTableProps) => {
   ];
   return (
     <ListContainer>
-      <ListTitle>
+      <ListTitle className="title">
         Participation listing (enable only for participants)
       </ListTitle>
       <TableContainer>
         <ListTable>
-          <TableHead>
+          <TableHead className="title">
             {tableHead.map((item) => (
               <TableHeadItem key={item}>{item}</TableHeadItem>
             ))}
           </TableHead>
 
           {participants.map((participant) => (
-            <TableRowItem>
+            <TableRowItem className="paragraph">
               <TableName>{participant.name}</TableName>
               <TableEmail>{participant.email}</TableEmail>
               <TableWallet>{participant.wallet}</TableWallet>

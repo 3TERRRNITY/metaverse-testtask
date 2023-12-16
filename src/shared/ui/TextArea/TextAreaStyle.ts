@@ -15,7 +15,6 @@ export const TextAreaContainer = styled.textarea`
   background-color: transparent;
   color: #ffffff;
 
-  font-family: AvenirNextCyr;
   font-size: 14px;
   line-height: 18px;
 

@@ -8,7 +8,11 @@ interface ITextareaProps {
 
 const TextArea = ({ text, disabled, placeholder }: ITextareaProps) => {
   return (
-    <TextAreaContainer disabled={disabled} placeholder={placeholder}>
+    <TextAreaContainer
+      className="paragraph"
+      disabled={disabled}
+      placeholder={placeholder}
+    >
       {text}
     </TextAreaContainer>
   );

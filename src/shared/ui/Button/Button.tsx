@@ -6,7 +6,11 @@ interface IButtonProps {
 }
 
 const Button = ({ title, disabled }: IButtonProps) => {
-  return <ButtonContainer disabled={disabled}>{title}</ButtonContainer>;
+  return (
+    <ButtonContainer className="title" disabled={disabled}>
+      {title}
+    </ButtonContainer>
+  );
 };
 
 export default Button;

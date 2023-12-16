@@ -6,7 +6,6 @@ export const ListContainer = styled.div`
 `;
 
 export const ListTitle = styled.div`
-  font-family: BebasNeue;
   font-size: 36px;
   line-height: 43.2px;
   text-transform: uppercase;
@@ -38,7 +37,6 @@ export const ListTable = styled.table`
 `;
 export const TableHead = styled.tr``;
 export const TableHeadItem = styled.th`
-  font-family: BebasNeue;
   font-size: 24px;
   line-height: 28.8px;
 
@@ -51,7 +49,6 @@ export const TableHeadItem = styled.th`
 export const TableRowItem = styled.tr`
   border-top: 1px solid #ffffff;
 
-  font-family: AvenirNextCyr;
   font-size: 14px;
   line-height: 18px;
 
