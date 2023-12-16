@@ -9,3 +9,12 @@ span {
 table {
   border-collapse: collapse;
 }
+
+@font-face {
+  font-family: BebasNeue;
+  src: url(/public/BebasNeue-Regular.ttf);
+}
+@font-face {
+  font-family: AvenirNextCyr;
+  src: url(/public/AvenirNextCyr-Regular.ttf);
+}

@@ -16,6 +16,11 @@ export const ButtonContainer = styled.button`
   background-color: #e75626;
   color: #ffffff;
 
+  font-family: BebasNeue;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21.6px;
+
   cursor: pointer;
   transition: background-color 300ms ease-in;
   &:active,

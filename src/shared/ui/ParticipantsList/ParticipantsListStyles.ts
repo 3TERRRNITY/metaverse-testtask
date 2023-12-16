@@ -6,6 +6,9 @@ export const ListContainer = styled.div`
 `;
 
 export const ListTitle = styled.div`
+  font-family: BebasNeue;
+  font-size: 36px;
+  line-height: 43.2px;
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 36px;
@@ -14,6 +17,7 @@ export const ListTitle = styled.div`
 
 export const TableContainer = styled.div`
   width: 100%;
+
   height: 550px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
@@ -34,6 +38,10 @@ export const ListTable = styled.table`
 `;
 export const TableHead = styled.tr``;
 export const TableHeadItem = styled.th`
+  font-family: BebasNeue;
+  font-size: 24px;
+  line-height: 28.8px;
+
   padding-bottom: 16px;
   text-align: left;
   font-weight: 700;
@@ -42,6 +50,11 @@ export const TableHeadItem = styled.th`
 
 export const TableRowItem = styled.tr`
   border-top: 1px solid #ffffff;
+
+  font-family: AvenirNextCyr;
+  font-size: 14px;
+  line-height: 18px;
+
   &:last-of-type {
     border-bottom: 1px solid #ffffff;
   }
