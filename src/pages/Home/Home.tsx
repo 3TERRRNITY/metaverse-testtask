@@ -1,4 +1,4 @@
-import { Button, TextArea } from "../../shared";
+import { Button, ParticipantsTable, TextArea } from "../../shared";
 
 const Home = () => {
   return (
@@ -9,6 +9,7 @@ const Home = () => {
         disabled
         text=""
       />
+      <ParticipantsTable />
     </div>
   );
 };
