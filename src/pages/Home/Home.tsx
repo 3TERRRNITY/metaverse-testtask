@@ -1,15 +1,9 @@
-import { Button, ParticipantsTable, TextArea } from "../../shared";
+import Planet from "../../entities/Planet/Planet";
 
 const Home = () => {
   return (
     <div>
-      SALAM <Button disabled title="Get early access" />{" "}
-      <TextArea
-        placeholder="We will display your email in participation list "
-        disabled
-        text=""
-      />
-      <ParticipantsTable />
+      <Planet />
     </div>
   );
 };
