@@ -10,4 +10,5 @@ export const Circle = styled.div`
 export const PlanetImage = styled.img`
   width: 320px;
   height: 322px;
+  z-index: 10;
 `;

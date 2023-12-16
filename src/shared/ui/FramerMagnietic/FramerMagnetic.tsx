@@ -31,7 +31,7 @@ export default function FramerMagnetic({ children }: FramerMagneticProps) {
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 30, mass: 0.1 }}
+      transition={{ type: "spring", stiffness: 35, damping: 10, mass: 0.1 }}
     >
       {children}
     </motion.div>

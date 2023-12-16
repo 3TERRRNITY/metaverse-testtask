@@ -6,13 +6,15 @@ const Planet = () => {
     <Circle className="large-circle">
       <Circle className="big-circle">
         <Circle className="time-circle">
-          <Circle className="time-circle-duplicate">
-            <Circle className="medium-circle">
-              <Circle className="small-circle">
-                <Circle className="smallest-circle">
-                  <FramerMagnetic>
-                    <PlanetImage src="/public/planet.png" alt="planet" />
-                  </FramerMagnetic>
+          <Circle className="time-circle-text">
+            <Circle className="time-circle-duplicate">
+              <Circle className="medium-circle">
+                <Circle className="small-circle">
+                  <Circle className="smallest-circle">
+                    <FramerMagnetic>
+                      <PlanetImage src="/public/planet.png" alt="planet" />
+                    </FramerMagnetic>
+                  </Circle>
                 </Circle>
               </Circle>
             </Circle>

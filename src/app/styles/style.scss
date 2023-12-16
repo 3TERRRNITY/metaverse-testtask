@@ -66,6 +66,26 @@ table {
 .time-circle {
   border: 0.5px solid $color-orange;
 }
+.time-circle-with-text {
+  position: relative;
+  width: 486px;
+  height: 486px;
+}
+.time-text {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff; /* Цвет фона для текста */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: AvenirNextCyr; /* Указание шрифта */
+  color: $color-orange; /* Цвет текста */
+  z-index: 1;
+}
 // dots for time-circle
 .time-circle::before,
 .time-circle::after {
@@ -75,7 +95,27 @@ table {
   height: 6px;
   background-color: $color-orange;
   border-radius: 50%;
-  z-index: 0;
+  z-index: 1;
+}
+
+.time-circle-text::before {
+  position: absolute;
+  content: "Q1 2022";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  width: 80px;
+  height: 30px;
+  top: -15px;
+  left: calc(35%);
+
+  font-family: BebasNeue;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 16.8px;
+  background-color: #fff;
+  color: $color-primary;
 }
 
 .time-circle::before {
