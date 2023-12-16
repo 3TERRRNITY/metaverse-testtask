@@ -12,7 +12,7 @@ const Planet = () => {
                 <Circle className="small-circle">
                   <Circle className="smallest-circle">
                     <FramerMagnetic>
-                      <PlanetImage src="/public/planet.png" alt="planet" />
+                      <PlanetImage src="/planet.png" alt="planet" />
                     </FramerMagnetic>
                   </Circle>
                 </Circle>

@@ -12,11 +12,11 @@ table {
 
 @font-face {
   font-family: BebasNeue;
-  src: url(/public/BebasNeue-Regular.ttf);
+  src: url(/BebasNeue-Regular.ttf);
 }
 @font-face {
   font-family: AvenirNextCyr;
-  src: url(/public/AvenirNextCyr-Regular.ttf);
+  src: url(/AvenirNextCyr-Regular.ttf);
 }
 
 .title {
@@ -78,7 +78,7 @@ table {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff; /* Цвет фона для текста */
+  background-color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
