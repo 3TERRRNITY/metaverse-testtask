@@ -1,10 +1,10 @@
-import Planet from "../../entities/Planet/Planet";
+import { MainPageHero } from "../../widgets";
 
 const Home = () => {
   return (
-    <div>
-      <Planet />
-    </div>
+    <>
+      <MainPageHero />
+    </>
   );
 };
 
