@@ -10,94 +10,19 @@ import {
   TableRowItem,
   TableWallet,
 } from "./ParticipantsListStyles.ts";
+interface IParticipantsProps {
+  id: number;
+  username: string;
+  email: string;
+  address?: string;
+}
+interface IParticipantsTableProps {
+  participants: IParticipantsProps[];
+}
 
-interface IParticipantsTableProps {}
-
-const ParticipantsTable = (props: IParticipantsTableProps) => {
+const ParticipantsTable = ({ participants }: IParticipantsTableProps) => {
   const tableHead = ["name", "email", "wallet"];
-  // TODO: example
-  const participants = [
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-    {
-      name: "Hamish Gilmore",
-      email: "walob95230@nubotel.com",
-      wallet: "0x279D9f0c10fBB3D44fEf96...",
-    },
-  ];
+
   return (
     <ListContainer>
       <ListTitle className="title">
@@ -112,10 +37,10 @@ const ParticipantsTable = (props: IParticipantsTableProps) => {
           </TableHead>
 
           {participants.map((participant) => (
-            <TableRowItem className="paragraph">
-              <TableName>{participant.name}</TableName>
+            <TableRowItem className="paragraph" key={participant.id}>
+              <TableName>{participant.username}</TableName>
               <TableEmail>{participant.email}</TableEmail>
-              <TableWallet>{participant.wallet}</TableWallet>
+              <TableWallet>{participant.address}</TableWallet>
             </TableRowItem>
           ))}
         </ListTable>

@@ -1,9 +1,10 @@
-import { MainPageHero } from "../../widgets";
+import { MainPageHero, Registration } from "../../widgets";
 
 const Home = () => {
   return (
     <>
       <MainPageHero />
+      <Registration />
     </>
   );
 };

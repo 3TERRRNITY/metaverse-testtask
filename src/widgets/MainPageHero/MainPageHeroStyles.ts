@@ -4,7 +4,7 @@ export const HeroContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(12, 1fr);
 
-  margin-top: 35px;
+  margin: 35px 0 60px 0;
 `;
 
 export const HeroText = styled.div`

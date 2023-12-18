@@ -7,7 +7,7 @@ interface IButtonProps {
 
 const Button = ({ title, disabled }: IButtonProps) => {
   return (
-    <ButtonContainer className="title" disabled={disabled}>
+    <ButtonContainer className="title" disabled={disabled} type="submit">
       {title}
     </ButtonContainer>
   );
