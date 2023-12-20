@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 
 export const ListContainer = styled.div`
   color: #ffffff;
@@ -46,14 +47,31 @@ export const TableHeadItem = styled.th`
   text-transform: uppercase;
 `;
 
+export const TableRowLink = styled(Link)`
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+`;
 export const TableRowItem = styled.tr`
   border-top: 1px solid #ffffff;
 
   font-size: 14px;
   line-height: 18px;
 
+  cursor: pointer;
+
+  position: relative;
+
   &:last-of-type {
     border-bottom: 1px solid #ffffff;
+  }
+
+  &:hover {
+    color: #e75626;
   }
 `;
 

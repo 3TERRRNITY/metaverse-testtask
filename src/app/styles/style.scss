@@ -9,6 +9,16 @@ span {
 table {
   border-collapse: collapse;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Если нужно убрать стили при наведении на ссылку */
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
 
 @font-face {
   font-family: BebasNeue;

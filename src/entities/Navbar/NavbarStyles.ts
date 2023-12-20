@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { Link } from "react-router-dom";
 export const NavbarContainer = styled.div`
   display: flex;
   height: 72px;
@@ -6,13 +7,13 @@ export const NavbarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-export const LogoContainer = styled.div`
+export const LogoContainer = styled(Link)`
   width: 199px;
   height: 44px;
 
   font-size: 18px;
   line-height: 21.6px;
-
+  cursor: pointer;
   text-transform: uppercase;
 
   display: flex;

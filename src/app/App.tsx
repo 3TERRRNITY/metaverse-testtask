@@ -1,16 +1,16 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Home, WalletInfo } from "../pages";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/wallet/:id">
+    <Switch>
+      <Route path="/wallet/:id">
         <WalletInfo />
       </Route>
-    </BrowserRouter>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
   );
 }
 

@@ -1,3 +1,4 @@
+import { useHistory } from "react-router-dom";
 import {
   ListContainer,
   ListTable,
@@ -8,6 +9,7 @@ import {
   TableHeadItem,
   TableName,
   TableRowItem,
+  TableRowLink,
   TableWallet,
 } from "./ParticipantsListStyles.ts";
 interface IParticipantsProps {
@@ -38,7 +40,10 @@ const ParticipantsTable = ({ participants }: IParticipantsTableProps) => {
 
           {participants.map((participant) => (
             <TableRowItem className="paragraph" key={participant.id}>
-              <TableName>{participant.username}</TableName>
+              <TableName>
+                <TableRowLink to={`/wallet/:${participant.id}`} />
+                {participant.username}
+              </TableName>
               <TableEmail>{participant.email}</TableEmail>
               <TableWallet>{participant.address}</TableWallet>
             </TableRowItem>

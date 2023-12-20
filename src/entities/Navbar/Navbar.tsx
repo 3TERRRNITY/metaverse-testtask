@@ -6,7 +6,9 @@ interface INavbarProps {}
 const Navbar = (props: INavbarProps) => {
   return (
     <NavbarContainer>
-      <LogoContainer className="title">Logo</LogoContainer>
+      <LogoContainer to={"/"} className="title">
+        Logo
+      </LogoContainer>
       <Button title="Connect Metamask" disabled={false} />
     </NavbarContainer>
   );
