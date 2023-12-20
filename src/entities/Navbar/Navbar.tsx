@@ -1,9 +1,7 @@
 import { Button } from "../../shared";
 import { LogoContainer, NavbarContainer } from "./NavbarStyles";
 
-interface INavbarProps {}
-
-const Navbar = (props: INavbarProps) => {
+const Navbar = () => {
   return (
     <NavbarContainer>
       <LogoContainer to={"/"} className="title">
