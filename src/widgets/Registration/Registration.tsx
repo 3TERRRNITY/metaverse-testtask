@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, ParticipantsTable, TextArea } from "../../shared";
 import {
+  InformationLabel,
+  InformationText,
   ParticipantsTableContainer,
   RegistrationDescription,
   RegistrationForm,
@@ -9,6 +11,7 @@ import {
   RegistrationPage,
   RegistrationTitle,
 } from "./RegistrationStyles";
+import { useEthers } from "@usedapp/core";
 
 type Participant = {
   id: number;
@@ -18,6 +21,7 @@ type Participant = {
 };
 
 const Registration = () => {
+  const { account } = useEthers();
   const [participants, setParticipants] = useState<Participant[]>([]);
   const [formData, setFormData] = useState({
     username: "",
@@ -46,8 +50,6 @@ const Registration = () => {
     fetchParticipants();
   }, []);
 
-  console.log(participants);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -55,13 +57,15 @@ const Registration = () => {
       id: participants.length + 1,
       username: formData.username,
       email: formData.email,
+      address: account,
     };
 
     setParticipants([newParticipant, ...participants]);
 
-    setFormData({ username: "", email: "" });
-
     setFormSubmitted(true);
+  };
+  const handleUpdateParticipants = (newParticipants: Participant[]) => {
+    setParticipants(newParticipants);
   };
 
   return (
@@ -79,32 +83,63 @@ const Registration = () => {
           </RegistrationDescription>
         </RegistrationInfoContainer>
         <RegistrationForm onSubmit={handleSubmit}>
-          <TextArea
-            type="text"
-            name="username"
-            label="name"
-            placeholder="We will display your name in participation list"
-            value={formData.username}
-            onChange={(e) =>
-              setFormData({ ...formData, username: e.target.value })
-            }
-          />
-          <TextArea
-            type="email"
-            label="email"
-            name="email"
-            placeholder="We will display your name in participation list"
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-          />
-          <Button title="Get early access" disabled={false} />
+          {!formSubmitted ? (
+            <React.Fragment>
+              <TextArea
+                disabled={account ? false : true}
+                type="text"
+                name="username"
+                label="name"
+                placeholder="We will display your name in participation list"
+                value={formData.username}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    username: e.target.value,
+                  })
+                }
+              />
+              <TextArea
+                disabled={account ? false : true}
+                type="email"
+                label="email"
+                name="email"
+                placeholder="We will display your email in participation list"
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+              />
+              <Button
+                disabled={account ? false : true}
+                title="Get early access"
+              />
+            </React.Fragment>
+          ) : (
+            <React.Fragment>
+              <InformationLabel className="title">name</InformationLabel>
+              <InformationText className="title">
+                {formData.username}
+              </InformationText>
+
+              <InformationLabel className="title">email</InformationLabel>
+              <InformationText className="title">
+                {formData.email}
+              </InformationText>
+              <Button disabled title="List me to the table" />
+            </React.Fragment>
+          )}
         </RegistrationForm>
       </RegistrationFormContainer>
 
       <ParticipantsTableContainer>
-        {formSubmitted && <ParticipantsTable participants={participants} />}
+        {formSubmitted && (
+          <ParticipantsTable
+            onUpdateFormSubmitted={setFormSubmitted}
+            onUpdateParticipants={handleUpdateParticipants}
+            participants={participants}
+          />
+        )}
       </ParticipantsTableContainer>
     </RegistrationPage>
   );

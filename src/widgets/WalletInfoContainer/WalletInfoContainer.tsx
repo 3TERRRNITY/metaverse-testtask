@@ -59,7 +59,7 @@ const WalletInfoContainer = () => {
         </WalletInfoText>
       </WalletInfo>
       <WalletPlanet>
-        <Planet />
+        <Planet walletInfo />
       </WalletPlanet>
     </WalletPage>
   );

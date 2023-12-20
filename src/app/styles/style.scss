@@ -80,27 +80,7 @@ a:hover {
 .time-circle {
   border: 0.5px solid $color-orange;
 }
-.time-circle-with-text {
-  position: relative;
-  width: 486px;
-  height: 486px;
-}
-.time-text {
-  position: absolute;
-  width: 80px;
-  height: 30px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: AvenirNextCyr; /* Указание шрифта */
-  color: $color-orange; /* Цвет текста */
-  z-index: 1;
-}
-// dots for time-circle
+
 .time-circle::before,
 .time-circle::after {
   content: "";
@@ -141,7 +121,6 @@ a:hover {
   bottom: -3px;
   left: calc(50% - 3px);
 }
-// dots for duplicate time-circle
 
 .time-circle-duplicate::before,
 .time-circle-duplicate::after {

@@ -74,6 +74,10 @@ export const TableRowItem = styled.tr`
     color: #e75626;
   }
 `;
+export const HighlightedTableRowItem = styled(TableRowItem)`
+  color: #e75626;
+  cursor: auto;
+`;
 
 export const TableName = styled.td`
   padding: 16px 0;
@@ -84,3 +88,16 @@ export const TableEmail = styled.td`
 export const TableWallet = styled.td`
   padding: 16px 0;
 `;
+
+export const DeleteContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+`;
+export const Delete = styled.img``;

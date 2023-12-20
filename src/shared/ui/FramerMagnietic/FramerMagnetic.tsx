@@ -1,12 +1,13 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+
 interface FramerMagneticProps {
   children: React.ReactNode;
 }
 
 export default function FramerMagnetic({ children }: FramerMagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: 50, y: 50 });
 
   const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = e;
@@ -20,18 +21,28 @@ export default function FramerMagnetic({ children }: FramerMagneticProps) {
   };
 
   const reset = () => {
-    setPosition({ x: 0, y: 0 });
+    setPosition({ x: 50, y: 50 });
   };
 
   const { x, y } = position;
   return (
     <motion.div
-      style={{ position: "relative" }}
       ref={ref}
+      style={{
+        position: "absolute",
+        borderRadius: "50%",
+        height: "426px",
+        width: "426px",
+      }}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 35, damping: 10, mass: 0.1 }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 100,
+        mass: 5,
+      }}
     >
       {children}
     </motion.div>

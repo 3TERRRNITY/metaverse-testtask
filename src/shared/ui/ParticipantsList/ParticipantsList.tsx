@@ -1,4 +1,8 @@
+import { useEthers } from "@usedapp/core";
 import {
+  Delete,
+  DeleteContainer,
+  HighlightedTableRowItem,
   ListContainer,
   ListTable,
   ListTitle,
@@ -11,6 +15,7 @@ import {
   TableRowLink,
   TableWallet,
 } from "./ParticipantsListStyles.ts";
+import React, { useEffect, useState } from "react";
 interface IParticipantsProps {
   id: number;
   username: string;
@@ -19,11 +24,31 @@ interface IParticipantsProps {
 }
 interface IParticipantsTableProps {
   participants: IParticipantsProps[];
+  onUpdateFormSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
+  onUpdateParticipants: (participants: IParticipantsProps[]) => void;
 }
 
-const ParticipantsTable = ({ participants }: IParticipantsTableProps) => {
+const ParticipantsTable = ({
+  participants,
+  onUpdateFormSubmitted,
+  onUpdateParticipants,
+}: IParticipantsTableProps) => {
   const tableHead = ["name", "email", "wallet"];
+  const { account } = useEthers();
+  const [updatedParticipants, setUpdatedParticipants] =
+    useState<IParticipantsProps[]>(participants);
 
+  useEffect(() => {
+    setUpdatedParticipants(participants);
+  }, [participants]);
+  const handleDelete = (id: number) => {
+    onUpdateParticipants(
+      participants.filter((participant) => participant.id !== id)
+    );
+    onUpdateFormSubmitted(false);
+  };
+
+  console.log(updatedParticipants);
   return (
     <ListContainer>
       <ListTitle className="title">
@@ -37,15 +62,35 @@ const ParticipantsTable = ({ participants }: IParticipantsTableProps) => {
             ))}
           </TableHead>
 
-          {participants.map((participant) => (
-            <TableRowItem className="paragraph" key={participant.id}>
-              <TableName>
-                <TableRowLink to={`/wallet/:${participant.id}`} />
-                {participant.username}
-              </TableName>
-              <TableEmail>{participant.email}</TableEmail>
-              <TableWallet>{participant.address}</TableWallet>
-            </TableRowItem>
+          {updatedParticipants.map((participant) => (
+            <React.Fragment key={participant.id}>
+              {participant.address === account ? (
+                <HighlightedTableRowItem className="paragraph">
+                  <TableName>
+                    <TableRowLink to={`/wallet/:${participant.id}`} />
+                    {participant.username}
+                  </TableName>
+                  <TableEmail>{participant.email}</TableEmail>
+                  <TableWallet>{participant.address}</TableWallet>
+                  <DeleteContainer>
+                    <Delete
+                      onClick={() => handleDelete(participant.id)}
+                      src="/delete.svg"
+                      alt="delete icon"
+                    />
+                  </DeleteContainer>
+                </HighlightedTableRowItem>
+              ) : (
+                <TableRowItem className="paragraph">
+                  <TableName>
+                    <TableRowLink to={`/wallet/:${participant.id}`} />
+                    {participant.username}
+                  </TableName>
+                  <TableEmail>{participant.email}</TableEmail>
+                  <TableWallet>{participant.address}</TableWallet>
+                </TableRowItem>
+              )}
+            </React.Fragment>
           ))}
         </ListTable>
       </TableContainer>

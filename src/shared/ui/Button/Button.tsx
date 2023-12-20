@@ -22,7 +22,11 @@ const Button = ({ title, disabled, wallet = false }: IButtonProps) => {
             {title}
           </ButtonContainer>
         )}
-        {account && <WalletAddress className="title">{account}</WalletAddress>}
+        {account && (
+          <WalletAddress className="title">
+            {account.substring(0, 18) + "..."}
+          </WalletAddress>
+        )}
       </React.Fragment>
     );
   } else {

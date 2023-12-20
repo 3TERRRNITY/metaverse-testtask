@@ -1,4 +1,8 @@
 import styled from "@emotion/styled";
+import {
+  WalletInfoLabel,
+  WalletInfoText,
+} from "../WalletInfoContainer/WalletInfoContainerStyles";
 
 export const RegistrationPage = styled.div`
   display: grid;
@@ -39,3 +43,7 @@ export const RegistrationForm = styled.form`
 export const ParticipantsTableContainer = styled.div`
   grid-column: 6/13;
 `;
+
+export const InformationLabel = styled(WalletInfoLabel)``;
+
+export const InformationText = styled(WalletInfoText)``;
