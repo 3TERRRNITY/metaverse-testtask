@@ -32,3 +32,15 @@ export const ButtonContainer = styled.button`
     pointer-events: none;
   }
 `;
+
+export const WalletAddress = styled(ButtonContainer)`
+  color: #e75626;
+  background-color: transparent;
+  width: max-content;
+  height: auto;
+  border-radius: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+`;

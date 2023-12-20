@@ -7,7 +7,7 @@ const Navbar = () => {
       <LogoContainer to={"/"} className="title">
         Logo
       </LogoContainer>
-      <Button title="Connect Metamask" disabled={false} />
+      <Button title="Connect Metamask" disabled={false} wallet />
     </NavbarContainer>
   );
 };
