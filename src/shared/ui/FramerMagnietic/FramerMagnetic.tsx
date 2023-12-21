@@ -7,7 +7,7 @@ interface FramerMagneticProps {
 
 export default function FramerMagnetic({ children }: FramerMagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 50, y: 50 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = e;
@@ -21,7 +21,7 @@ export default function FramerMagnetic({ children }: FramerMagneticProps) {
   };
 
   const reset = () => {
-    setPosition({ x: 50, y: 50 });
+    setPosition({ x: 0, y: 0 });
   };
 
   const { x, y } = position;
@@ -31,8 +31,11 @@ export default function FramerMagnetic({ children }: FramerMagneticProps) {
       style={{
         position: "absolute",
         borderRadius: "50%",
-        height: "426px",
-        width: "426px",
+        height: "526px",
+        width: "526px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
@@ -40,7 +43,7 @@ export default function FramerMagnetic({ children }: FramerMagneticProps) {
       transition={{
         type: "spring",
         stiffness: 100,
-        damping: 100,
+        damping: 500,
         mass: 5,
       }}
     >
