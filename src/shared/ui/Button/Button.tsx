@@ -3,8 +3,8 @@ import { ButtonContainer, WalletAddress } from "./ButtonStyles";
 import React from "react";
 import { IButtonProps } from "../../api/types";
 
-const Button = ({ title, disabled, wallet = false }: IButtonProps) => {
-  const { activateBrowserWallet, account } = useEthers();
+const Button = ({ title, disabled, wallet = false, onClick }: IButtonProps) => {
+  const { activateBrowserWallet, deactivate, account } = useEthers();
   if (wallet) {
     return (
       // Подключение крипто-кошелька
@@ -19,7 +19,8 @@ const Button = ({ title, disabled, wallet = false }: IButtonProps) => {
           </ButtonContainer>
         )}
         {account && (
-          <WalletAddress className="title">
+          // Возможность отключить кошелек по клику на адрес
+          <WalletAddress className="title" onClick={deactivate}>
             {account.substring(0, 18) + "..."}
           </WalletAddress>
         )}
@@ -27,7 +28,12 @@ const Button = ({ title, disabled, wallet = false }: IButtonProps) => {
     );
   } else {
     return (
-      <ButtonContainer className="title" disabled={disabled} type="submit">
+      <ButtonContainer
+        className="title"
+        disabled={disabled}
+        type="submit"
+        onClick={onClick}
+      >
         {title}
       </ButtonContainer>
     );

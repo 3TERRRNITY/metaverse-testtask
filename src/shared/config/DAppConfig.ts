@@ -1,8 +1,8 @@
-import { Config, Goerli, Mainnet } from "@usedapp/core";
+import { Config, Goerli } from "@usedapp/core";
 import { getDefaultProvider } from "ethers";
 
 export const config: Config = {
-  readOnlyChainId: Mainnet.chainId,
+  readOnlyChainId: Goerli.chainId,
   readOnlyUrls: {
     [Goerli.chainId]: getDefaultProvider("goerli"),
   },

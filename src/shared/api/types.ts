@@ -2,6 +2,7 @@ export interface IButtonProps {
   title: string;
   disabled: boolean;
   wallet?: boolean;
+  onClick?: () => void;
 }
 
 export interface FramerMagneticProps {
