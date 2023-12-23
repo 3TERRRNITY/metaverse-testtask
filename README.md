@@ -20,8 +20,8 @@
 
 ## Установка
 
-1. Склонируйте репозиторий: `git clone https://github.com/your-repo-url.git`
-2. Перейдите в директорию проекта: `cd project-directory`
+1. Склонируйте репозиторий: `[git clone https://github.com/your-repo-url.git](https://github.com/3TERRRNITY/metaverse-testtask)`
+2. Перейдите в директорию проекта: `cd metaverse-testtask`
 3. Установите зависимости: `npm install` или `yarn install`
 
 ## Запуск проекта
