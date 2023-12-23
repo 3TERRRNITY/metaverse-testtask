@@ -9,13 +9,7 @@ import {
   WalletPlanet,
 } from "./WalletInfoContainerStyles";
 import { useEffect, useState } from "react";
-
-interface UserData {
-  id: number;
-  username: string;
-  email: string;
-  address: string;
-}
+import { UserData } from "../api/types";
 
 const WalletInfoContainer = () => {
   const { id } = useParams<{ id: string }>();

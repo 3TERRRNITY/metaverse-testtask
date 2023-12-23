@@ -12,13 +12,7 @@ import {
   RegistrationTitle,
 } from "./RegistrationStyles";
 import { useEthers } from "@usedapp/core";
-
-type Participant = {
-  id: number;
-  username: string;
-  email: string;
-  address?: string;
-};
+import { Participant } from "../api/types";
 
 const Registration = () => {
   const { account } = useEthers();

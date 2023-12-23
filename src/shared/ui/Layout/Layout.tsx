@@ -1,9 +1,6 @@
 import React from "react";
 import { LayoutContainer } from "./LayoutStyles";
-
-interface ILayoutContainer {
-  children: React.ReactNode;
-}
+import { ILayoutContainer } from "../../api/types";
 
 const Layout = ({ children }: ILayoutContainer) => {
   return <LayoutContainer>{children}</LayoutContainer>;

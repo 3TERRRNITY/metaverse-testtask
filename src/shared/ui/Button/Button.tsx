@@ -1,12 +1,7 @@
 import { useEthers } from "@usedapp/core";
 import { ButtonContainer, WalletAddress } from "./ButtonStyles";
 import React from "react";
-
-interface IButtonProps {
-  title: string;
-  disabled: boolean;
-  wallet?: boolean;
-}
+import { IButtonProps } from "../../api/types";
 
 const Button = ({ title, disabled, wallet = false }: IButtonProps) => {
   const { activateBrowserWallet, account } = useEthers();

@@ -16,17 +16,10 @@ import {
   TableWallet,
 } from "./ParticipantsListStyles.ts";
 import React, { useEffect, useState } from "react";
-interface IParticipantsProps {
-  id: number;
-  username: string;
-  email: string;
-  address?: string;
-}
-interface IParticipantsTableProps {
-  participants: IParticipantsProps[];
-  onUpdateFormSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
-  onUpdateParticipants: (participants: IParticipantsProps[]) => void;
-}
+import {
+  IParticipantsProps,
+  IParticipantsTableProps,
+} from "../../api/types.ts";
 
 const ParticipantsTable = ({
   participants,

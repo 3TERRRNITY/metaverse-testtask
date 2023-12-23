@@ -1,10 +1,7 @@
 import { TimeCircle } from "../../shared";
 import FramerMagnetic from "../../shared/ui/FramerMagnietic/FramerMagnetic";
+import { IPlanet } from "../api/types";
 import { Circle, PlanetImage } from "./PlanetStyles";
-
-interface IPlanet {
-  walletInfo?: boolean;
-}
 
 const Planet = ({ walletInfo }: IPlanet) => {
   return (

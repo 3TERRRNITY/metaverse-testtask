@@ -1,15 +1,5 @@
+import { ITextareaProps } from "../../api/types";
 import { Label, TextAreaContainer } from "./TextAreaStyle";
-import React from "react";
-
-interface ITextareaProps {
-  placeholder: string;
-  disabled?: boolean;
-  label: string;
-  type: string;
-  name: string;
-  value?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 const TextArea = ({
   disabled,

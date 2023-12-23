@@ -1,9 +1,6 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-
-interface FramerMagneticProps {
-  children: React.ReactNode;
-}
+import { FramerMagneticProps } from "../../api/types";
 
 export default function FramerMagnetic({ children }: FramerMagneticProps) {
   const ref = useRef<HTMLDivElement>(null);
