@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { Button, ParticipantsTable, TextArea } from "../../shared";
 import {
   InformationLabel,
@@ -22,29 +22,29 @@ const Registration = () => {
     email: "",
   });
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-  useEffect(() => {
-    const fetchParticipants = async () => {
-      try {
-        const response = await fetch(
-          "https://new-backend.unistory.app/api/data?page=0&perPage=20"
-        );
 
-        if (response.ok) {
-          const data = await response.json();
+  const fetchParticipants = useCallback(async () => {
+    try {
+      const response = await fetch(
+        "https://new-backend.unistory.app/api/data?page=0&perPage=20"
+      );
 
-          setParticipants(data.items);
-        } else {
-          console.error("Failed to fetch participants");
-        }
-      } catch (error) {
-        console.error("Error:", error);
+      if (response.ok) {
+        const data = await response.json();
+        setParticipants(data.items);
+      } else {
+        console.error("Failed to fetch participants");
       }
-    };
-
-    fetchParticipants();
+    } catch (error) {
+      console.error("Error:", error);
+    }
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  useEffect(() => {
+    fetchParticipants();
+  }, [fetchParticipants]);
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const newParticipant: Participant = {
@@ -55,11 +55,7 @@ const Registration = () => {
     };
 
     setParticipants([newParticipant, ...participants]);
-
     setFormSubmitted(true);
-  };
-  const handleUpdateParticipants = (newParticipants: Participant[]) => {
-    setParticipants(newParticipants);
   };
 
   useEffect(() => {
@@ -91,7 +87,7 @@ const Registration = () => {
           {!formSubmitted ? (
             <React.Fragment>
               <TextArea
-                disabled={account ? false : true}
+                disabled={!account}
                 type="text"
                 name="username"
                 label="name"
@@ -105,7 +101,7 @@ const Registration = () => {
                 }
               />
               <TextArea
-                disabled={account ? false : true}
+                disabled={!account}
                 type="email"
                 label="email"
                 name="email"
@@ -115,10 +111,7 @@ const Registration = () => {
                   setFormData({ ...formData, email: e.target.value })
                 }
               />
-              <Button
-                disabled={account ? false : true}
-                title="Get early access"
-              />
+              <Button disabled={!account} title="Get early access" />
             </React.Fragment>
           ) : (
             <React.Fragment>
@@ -141,7 +134,7 @@ const Registration = () => {
         {formSubmitted && (
           <ParticipantsTable
             onUpdateFormSubmitted={setFormSubmitted}
-            onUpdateParticipants={handleUpdateParticipants}
+            onUpdateParticipants={setParticipants}
             participants={participants}
           />
         )}

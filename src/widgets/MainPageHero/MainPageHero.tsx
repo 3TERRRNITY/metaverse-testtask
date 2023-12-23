@@ -1,4 +1,5 @@
 import { Planet } from "../../entities";
+import { useMemo } from "react";
 import {
   HeroContainer,
   HeroDescription,
@@ -14,20 +15,24 @@ import {
 } from "./MainPageHeroStyles";
 
 const MainPageHero = () => {
-  const ROADMAPSTATS = [
-    {
-      figures: "12,345",
-      text: "Lorem ipsum dolor",
-    },
-    {
-      figures: "12,345",
-      text: "Lorem ipsum dolor",
-    },
-    {
-      figures: "12,345",
-      text: "Lorem ipsum dolor",
-    },
-  ];
+  const ROADMAP_STATS = useMemo(
+    () => [
+      {
+        figures: "12,345",
+        text: "Lorem ipsum dolor",
+      },
+      {
+        figures: "12,345",
+        text: "Lorem ipsum dolor",
+      },
+      {
+        figures: "12,345",
+        text: "Lorem ipsum dolor",
+      },
+    ],
+    []
+  );
+
   return (
     <HeroContainer>
       <HeroText className="title">
@@ -47,16 +52,14 @@ const MainPageHero = () => {
       <RoadmapStats>
         <RoadmapStatsTitle className="title">Roadmap stats</RoadmapStatsTitle>
         <RoadmapStatsContainer className="title">
-          {ROADMAPSTATS.map(
-            ({ figures, text }: { figures: string; text: string }, index) => (
-              <RoadmapStatsInformation key={`roadmap-${index}`}>
-                <RoadmapStatsFigure className="orange">
-                  {figures}
-                </RoadmapStatsFigure>
-                <RoadmapStatsText>{text}</RoadmapStatsText>
-              </RoadmapStatsInformation>
-            )
-          )}
+          {ROADMAP_STATS.map(({ figures, text }, index) => (
+            <RoadmapStatsInformation key={`roadmap-${index}`}>
+              <RoadmapStatsFigure className="orange">
+                {figures}
+              </RoadmapStatsFigure>
+              <RoadmapStatsText>{text}</RoadmapStatsText>
+            </RoadmapStatsInformation>
+          ))}
         </RoadmapStatsContainer>
       </RoadmapStats>
     </HeroContainer>
