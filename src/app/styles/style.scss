@@ -77,9 +77,6 @@ a:hover {
 
   position: relative;
 }
-.time-circle {
-  border: 0.5px solid $color-orange;
-}
 
 .time-circle::before,
 .time-circle::after {
@@ -113,12 +110,12 @@ a:hover {
 }
 
 .time-circle::before {
-  top: -3px;
-  left: calc(50% - 3px);
+  top: -5px;
+  left: calc(50% - 5px);
 }
 
 .time-circle::after {
-  bottom: -3px;
+  bottom: -5px;
   left: calc(50% - 3px);
 }
 
@@ -135,10 +132,10 @@ a:hover {
 
 .time-circle-duplicate::before {
   top: calc(50% - 3px);
-  left: 483px;
+  left: 485px;
 }
 
 .time-circle-duplicate::after {
   bottom: calc(50% - 3px);
-  left: -3px;
+  left: -5px;
 }

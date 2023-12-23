@@ -1,3 +1,4 @@
+import { TimeCircle } from "../../shared";
 import FramerMagnetic from "../../shared/ui/FramerMagnietic/FramerMagnetic";
 import { Circle, PlanetImage } from "./PlanetStyles";
 
@@ -10,6 +11,8 @@ const Planet = ({ walletInfo }: IPlanet) => {
     <Circle className="large-circle">
       <Circle className="big-circle">
         <Circle className="time-circle">
+          <TimeCircle />
+
           <Circle className={walletInfo ? "" : "time-circle-text"}>
             <Circle className="time-circle-duplicate">
               <Circle className="medium-circle">
