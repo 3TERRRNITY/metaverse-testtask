@@ -71,7 +71,9 @@ const ParticipantsTable = ({
                     {participant.username}
                   </TableName>
                   <TableEmail>{participant.email}</TableEmail>
-                  <TableWallet>{participant.address}</TableWallet>
+                  <TableWallet>
+                    {participant.address?.toLowerCase()}
+                  </TableWallet>
                   <DeleteContainer>
                     <Delete
                       onClick={() => handleDelete(participant.id)}

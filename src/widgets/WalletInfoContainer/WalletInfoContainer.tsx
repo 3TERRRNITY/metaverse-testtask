@@ -20,7 +20,7 @@ interface UserData {
 const WalletInfoContainer = () => {
   const { id } = useParams<{ id: string }>();
   const [userData, setUserData] = useState<UserData | null>(null);
-  console.log(id.substring(1));
+
   useEffect(() => {
     const fetchData = async () => {
       try {

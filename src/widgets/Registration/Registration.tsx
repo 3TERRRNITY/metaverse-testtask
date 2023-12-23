@@ -68,6 +68,17 @@ const Registration = () => {
     setParticipants(newParticipants);
   };
 
+  useEffect(() => {
+    const savedFormData = localStorage.getItem("registrationFormData");
+    if (savedFormData) {
+      setFormData(JSON.parse(savedFormData));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("registrationFormData", JSON.stringify(formData));
+  }, [formData]);
+
   return (
     <RegistrationPage>
       <RegistrationFormContainer>
