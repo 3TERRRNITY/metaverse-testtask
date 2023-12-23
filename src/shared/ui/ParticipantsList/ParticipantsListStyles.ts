@@ -76,7 +76,9 @@ export const TableRowItem = styled.tr`
 `;
 export const HighlightedTableRowItem = styled(TableRowItem)`
   color: #e75626;
-  cursor: auto;
+  cursor: default;
+
+  position: relative;
 `;
 
 export const TableName = styled.td`
@@ -91,13 +93,16 @@ export const TableWallet = styled.td`
 
 export const DeleteContainer = styled.div`
   position: absolute;
-  width: 100%;
+
   height: 100%;
   margin: auto 0;
+  top: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: end;
+  z-index: 100;
+`;
+export const Delete = styled.img`
   cursor: pointer;
 `;
-export const Delete = styled.img``;

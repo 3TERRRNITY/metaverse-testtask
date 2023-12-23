@@ -45,6 +45,8 @@ const ParticipantsTable = ({
     onUpdateParticipants(
       participants.filter((participant) => participant.id !== id)
     );
+    // При удалении своего аккаунта пропадает возможность смотреть участников
+    // Для реализации просмотра участников после удаления своих данных - удалить эту строку
     onUpdateFormSubmitted(false);
   };
 
@@ -66,10 +68,7 @@ const ParticipantsTable = ({
             <React.Fragment key={participant.id}>
               {participant.address === account ? (
                 <HighlightedTableRowItem className="paragraph">
-                  <TableName>
-                    <TableRowLink to={`/wallet/:${participant.id}`} />
-                    {participant.username}
-                  </TableName>
+                  <TableName>{participant.username}</TableName>
                   <TableEmail>{participant.email}</TableEmail>
                   <TableWallet>
                     {participant.address?.toLowerCase()}
