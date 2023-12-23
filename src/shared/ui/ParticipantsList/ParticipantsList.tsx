@@ -28,6 +28,7 @@ const ParticipantsTable = ({
 }: IParticipantsTableProps) => {
   const tableHead = ["name", "email", "wallet"];
   const { account } = useEthers();
+  // Для работы с массивом участников без мутации
   const [updatedParticipants, setUpdatedParticipants] =
     useState<IParticipantsProps[]>(participants);
 

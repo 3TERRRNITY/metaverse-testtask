@@ -7,6 +7,7 @@ const Button = ({ title, disabled, wallet = false }: IButtonProps) => {
   const { activateBrowserWallet, account } = useEthers();
   if (wallet) {
     return (
+      // Подключение крипто-кошелька
       <React.Fragment>
         {!account && (
           <ButtonContainer
