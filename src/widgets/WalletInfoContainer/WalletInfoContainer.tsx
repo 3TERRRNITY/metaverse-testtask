@@ -10,7 +10,7 @@ import {
 } from "./WalletInfoContainerStyles";
 import { useEffect, useState } from "react";
 import { UserData } from "../api/types";
-
+// Функция получения данных с бэкэнда для нужного участника
 const fetchDataById = async (id: string) => {
   try {
     const response = await fetch(
@@ -29,7 +29,7 @@ const fetchDataById = async (id: string) => {
 const WalletInfoContainer = () => {
   const { id } = useParams<{ id: string }>();
   const [userData, setUserData] = useState<UserData | null>(null);
-
+  // Получение данных
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchDataById(id);

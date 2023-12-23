@@ -14,12 +14,11 @@ a {
   color: inherit;
 }
 
-/* Если нужно убрать стили при наведении на ссылку */
 a:hover {
   text-decoration: none;
   color: inherit;
 }
-
+// Подключение шрифтов
 @font-face {
   font-family: BebasNeue;
   src: url(/BebasNeue-Regular.ttf);
@@ -28,7 +27,7 @@ a:hover {
   font-family: AvenirNextCyr;
   src: url(/AvenirNextCyr-Regular.ttf);
 }
-
+// Основные стили
 .title {
   font-family: BebasNeue;
 }
@@ -39,7 +38,7 @@ a:hover {
 .orange {
   color: $color-orange;
 }
-
+// Стилизация кругов для планеты
 .large-circle {
   width: 532px;
   height: 532px;

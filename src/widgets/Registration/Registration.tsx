@@ -22,7 +22,7 @@ const Registration = () => {
     email: "",
   });
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-
+  // Функция получение данных с бэкэнда
   const fetchParticipants = useCallback(async () => {
     try {
       const response = await fetch(
@@ -39,11 +39,11 @@ const Registration = () => {
       console.error("Error:", error);
     }
   }, []);
-
+  // Получение данных
   useEffect(() => {
     fetchParticipants();
   }, [fetchParticipants]);
-
+  // Функция при клике на кнопку
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -57,7 +57,7 @@ const Registration = () => {
     setParticipants([newParticipant, ...participants]);
     setFormSubmitted(true);
   };
-
+  // Сохранение в локальное хранилище
   useEffect(() => {
     const savedFormData = localStorage.getItem("registrationFormData");
     if (savedFormData) {
@@ -84,6 +84,7 @@ const Registration = () => {
           </RegistrationDescription>
         </RegistrationInfoContainer>
         <RegistrationForm onSubmit={handleSubmit}>
+          {/* Изменение блока в зависимости от заполнения данных */}
           {!formSubmitted ? (
             <React.Fragment>
               <TextArea
@@ -129,7 +130,7 @@ const Registration = () => {
           )}
         </RegistrationForm>
       </RegistrationFormContainer>
-
+      {/* Таблица с участниками */}
       <ParticipantsTableContainer>
         {formSubmitted && (
           <ParticipantsTable

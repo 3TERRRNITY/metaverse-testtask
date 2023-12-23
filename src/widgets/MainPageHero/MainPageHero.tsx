@@ -15,6 +15,7 @@ import {
 } from "./MainPageHeroStyles";
 
 const MainPageHero = () => {
+  // массив данных для дорожной карты
   const ROADMAP_STATS = useMemo(
     () => [
       {
@@ -45,7 +46,7 @@ const MainPageHero = () => {
         veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
         commodo consequat.
       </HeroDescription>
-
+      {/* Контейнер для выравнивания созданного компонента планеты */}
       <HeroPlanet>
         <Planet />
       </HeroPlanet>
