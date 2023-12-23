@@ -2,11 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./app/App.tsx";
 import "./app/styles/index.scss";
-import { Navbar } from "./entities/index.ts";
+import { Modal, Navbar } from "./entities/index.ts";
 import { Layout, config } from "./shared/index.ts";
 import { DAppProvider } from "@usedapp/core";
 import { BrowserRouter } from "react-router-dom";
-import { Modal } from "./widgets/index.ts";
+
+document.title = "NEW METAVERSE";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
