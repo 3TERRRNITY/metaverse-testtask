@@ -1,4 +1,3 @@
-import React from "react";
 import { LayoutContainer } from "./LayoutStyles";
 import { ILayoutContainer } from "../../api/types";
 
